@@ -1,9 +1,9 @@
 import React from 'react'
-import './LoginForm.css'
+import './Login.css'
 
 
 
-export default function LoginForm () {
+export default function Login () {
     return (
         <div>
             <form action="login">

@@ -1,25 +1,33 @@
 import React, {  } from 'react';
 import './App.css';
-import Header from '../s/Header/Header'
-import Footer from '../s/Footer/Footer'
+import { Route, Switch } from 'react-router-dom'
+import NavBar from '../src/components/NavBar/NavBar'
+import Inventory from './Routes/InventoryPage/Inventory'
+import LandingPage from './Routes/LandingPage/LandingPage'
+import AddItemPage from './Routes/AddItemPage/AddItemPage'
+import SignUp from './Routes/SignupPage/SignUp'
+import LogIn from './Routes/LoginPage/Login'
+import ProductDetail from './Routes/ProductDetailPage/ProductDetail'
+import HomePage from './Routes/UserHomePage/HomePage';
+
 
 function App() {
   return (
     <div className="App">
+      <NavBar />
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Farmer's Bazaar</h1>
       </header>
+      <Switch>
+        <Route exact path='/' component={HomePage} />
+        <Route path='/landing' component={LandingPage} />
+        <Route path='/inventory' component={Inventory} />
+        <Route path='/add' component={AddItemPage} />
+        <Route path='/signup' component={SignUp} />
+        <Route path='/login' component={LogIn} />
+        <Route path='/details' component={ProductDetail} />
+      </Switch>
+
     </div>
   );
 }

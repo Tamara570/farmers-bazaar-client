@@ -1,7 +1,7 @@
 import React from 'react';
-import './Form.css'
+import './SignUp.css'
 
-export default function SignupForm () {
+export default function Signup () {
     return (
         <div>
             <form action="register">
