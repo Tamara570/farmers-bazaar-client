@@ -5,8 +5,8 @@ import NavBar from '../src/components/NavBar/NavBar'
 import Inventory from './Routes/InventoryPage/Inventory'
 import LandingPage from './Routes/LandingPage/LandingPage'
 import AddItemPage from './Routes/AddItemPage/AddItemPage'
-import SignUp from './Routes/SignupPage/SignUp'
-import LogIn from './Routes/LoginPage/Login'
+import SignUpPage from './Routes/SignupPage/SignUpPage'
+import LogInPage from './Routes/LoginPage/LoginPage'
 import ProductDetail from './Routes/ProductDetailPage/ProductDetail'
 import HomePage from './Routes/UserHomePage/HomePage';
 
@@ -23,8 +23,8 @@ function App() {
         <Route path='/landing' component={LandingPage} />
         <Route path='/inventory' component={Inventory} />
         <Route path='/add' component={AddItemPage} />
-        <Route path='/signup' component={SignUp} />
-        <Route path='/login' component={LogIn} />
+        <Route path='/signup' component={SignUpPage} />
+        <Route path='/login' component={LogInPage} />
         <Route path='/details' component={ProductDetail} />
       </Switch>
 

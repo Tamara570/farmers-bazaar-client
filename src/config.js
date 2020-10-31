@@ -1,0 +1,18 @@
+let apiPath;
+let tokenKey;
+
+if (process.env.NODE_ENV === 'production') {
+  apiPath = ''
+  tokenKey = ''
+} else {
+  apiPath = 'http://localhost:8000/api'
+  tokenKey = 'bazaar-dev-auth-token'
+}
+
+let API_ENDPOINT = apiPath;
+let TOKEN_KEY = tokenKey;
+
+export default {
+  API_ENDPOINT,
+  TOKEN_KEY
+}
