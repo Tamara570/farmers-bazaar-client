@@ -1,16 +1,19 @@
-import React, {} from 'react'
+import React, { } from 'react'
 import ProductItem from '../../components/ProductItem/ProductItem'
 import './inventory.css'
+import Search from '../../components/SearchBar/Search'
 
 
-
-export default function Inventory () {
+export default function Inventory() {
     return (
-        <div>
-            <ProductItem />
-            <ProductItem />
-            <ProductItem />
-            <ProductItem />
-        </div>
+        <>
+            <Search/>
+            <div className="inventory-page-container">
+                <ProductItem />
+                <ProductItem />
+                <ProductItem />
+                <ProductItem />
+            </div>
+        </>
     )
 }

@@ -1,21 +1,15 @@
-import React, {} from 'react'
-import './search.css'
+import React from 'react'
+import './Search.css'
+import search from "../../icons/search.svg";
 
 
-
-export default function Search () {
+export default function Search() {
     return (
-        
-        
-        <div classNameName="search-bar">
-
-            <header>
-                <h1>Farmers Bazaar</h1>
-            </header>
-            <input type="text" placeholder="Search.." />
-            <button type="submit" />
+        <div classNameName="search-bar-container">
+            <form class="form-search" method="get" action="#">
+                <input type="search" name="search" placeholder="Search"></input>
+                <button type="submit"><img src={search} alt="" /></button>
+            </form>
         </div>
-        
-        
     )
 }

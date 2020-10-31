@@ -1,5 +1,6 @@
 import React, {  } from 'react';
 import './App.css';
+import './global/normalize.css'
 import { Route, Switch } from 'react-router-dom'
 import NavBar from '../src/components/NavBar/NavBar'
 import Header from '../src/components/Header/Header'
@@ -15,7 +16,6 @@ import HomePage from './Routes/UserHomePage/HomePage';
 function App() {
   return (
     <div className="App">
-      <NavBar />
       <Header />
       <Switch>
         <Route exact path='/' component={LandingPage} />
