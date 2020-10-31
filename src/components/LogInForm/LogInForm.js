@@ -11,7 +11,7 @@ class Login extends Component {
     state = {
         error: null,
         email: '',
-        password: ''
+        password: '',
       }
 
     handleSubmit = async (e) => {
@@ -63,13 +63,14 @@ class Login extends Component {
                     <label for="psw">Enter password</label>
                     <input
                         type="password"
-                        value={this.state.password}
+                        //value={this.state.password}
                         name="psw"
                         id="psw"
                         onChange={this.handleChange}
                         required
                     />
                 </div>
+
 
                 <div className='form-controls'>
                     <button type="submit">Submit</button>

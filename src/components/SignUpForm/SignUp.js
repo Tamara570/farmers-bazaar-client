@@ -115,7 +115,7 @@ class Signup extends Component {
                         type="password"
                         name="psw"
                         id="psw"
-                        value={this.state.password}
+                        //value={this.state.password}
                         onChange={this.handleChange}
                         required
                     />
@@ -128,7 +128,7 @@ class Signup extends Component {
                         type="password"
                         name="psw"
                         id="psw"
-                        value={this.state.password}
+                        //value={this.state.password}
                         onChange={this.handleChange}
                         required
                     />

@@ -10,8 +10,8 @@ export default function NavBar () {
             <div className="logo"></div>
             <div className="menu">
                 <ul>
-                    <li><Link to="/landing">Landing Page</Link></li>
-                    <li><Link to="/">Home Page</Link></li>
+                    <li><Link to="/">Landing Page</Link></li>
+                    <li><Link to="/home">Home Page</Link></li>
                     <li><Link to="/signup">Sign up</Link></li>
                     <li><Link to="/login">Log In</Link></li>
                     <li><Link to="/add">Add Item</Link></li>
