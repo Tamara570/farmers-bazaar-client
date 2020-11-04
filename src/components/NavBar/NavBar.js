@@ -10,13 +10,13 @@ export default function NavBar () {
             <div className="logo"></div>
             <div className="menu">
                 <ul>
-                    <li><Link to="/">Landing Page</Link></li>
-                    <li><Link to="/home">Home Page</Link></li>
-                    <li><Link to="/signup">Sign up</Link></li>
-                    <li><Link to="/login">Log In</Link></li>
+                    {/* <li><Link to="/">Landing Page</Link></li> */}
+                    {/* <li><Link to="/home">Home Page</Link></li>
+                    <li><Link to="/signup">Sign up</Link></li> */}
                     <li><Link to="/add">Add Item</Link></li>
-                    <li><Link to="/inventory">Inventory</Link></li>
-                    <li><Link to="/details">Product Detail</Link></li>
+                    <li><Link to="/login">Log In</Link></li>
+                    {/* <li><Link to="/inventory">Inventory</Link></li>
+                    <li><Link to="/details">Product Detail</Link></li> */}
                 </ul>
             </div>
         </div>

@@ -71,7 +71,6 @@ class Login extends Component {
                     />
                 </div>
 
-
                 <div className='form-controls'>
                     <button type="submit">Submit</button>
                 </div>
