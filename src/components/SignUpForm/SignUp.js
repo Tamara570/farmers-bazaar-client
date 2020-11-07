@@ -3,9 +3,9 @@ import './SignUp.css'
 import Validator from '../Validator/Validator'
 import AuthContext from '../../context/AuthContext'
 import AuthApiService from '../../services/auth-api-service'
-import { withAppContext } from '../../context/AppContext';
+import { VendorContext } from '../../context/VendorContext';
 
-class Signup extends Component {
+ export default class Signup extends React.Component {
     static contextType = AuthContext
 
     state = {
@@ -13,24 +13,27 @@ class Signup extends Component {
         password: '', passwordValid: false,
         formValid: false,
         error: null,
-        validationError: {},
+        validationError: {
+            password: null,
+            email: null,
+        },
     }
 
     handleSubmit = async (e) => {
         e.preventDefault();
         this.setState({error: null})
         const { email, password } = this.state
-        const newUser = { email, password}
-        const {setLoading} = this.props.appContext
+        const newUser = { user_name:email, password}
+        // const {setLoading} = this.props.VendorContext
         try {
-            setLoading(true)
+            // setLoading(true)
             const savedUser = await AuthApiService.createUser(newUser)
             this.context.login(savedUser.authToken)
             delete savedUser.authToken
             this.context.setCurrentUser(savedUser)
-            setLoading(true)
+            // setLoading(true)
         } catch(err) {
-            this.setState({error: err.message}, setLoading(false))
+            // this.setState({error: err.message}, setLoading(false))
         }
     }
 
@@ -68,7 +71,8 @@ class Signup extends Component {
             validationError.email = 'invalid format'
         }
 
-        this.setState({emailValid, validationError}, this.validateForm)
+        this.setState({ emailValid, validationError }, this.validateForm)
+        console.log(email)
     }
 
     validatePassword = () => {
@@ -83,20 +87,20 @@ class Signup extends Component {
             passwordValid = false
             validationError.password = 'must be between 6 and 72 characters'
         }
-
+        console.log(password,passwordValid,validationError)
         this.setState({passwordValid, validationError}, this.validateForm)
     }
 
     render() {
         const {validationError, emailValid, passwordValid, formValid} = this.state
-
+        console.log(validationError, emailValid,passwordValid,formValid)
         return (
             <form className='js-registration-form' action='#' onSubmit={this.handleSubmit}>
                 <div className='error-msg'>{this.state.error}</div>
 
                 <div className="form-group">
                     <label for="email">Email</label>
-                    < Validator isValid={emailValid} msg={validationError.email} />
+                    <Validator isValid={emailValid} msg={validationError.email} />
                     <input
                         type="text"
                         value={this.state.email}
@@ -110,10 +114,10 @@ class Signup extends Component {
                 
                 <div className="form-group">
                     <label for="psw">Password</label>
-                    < Validator isValid={passwordValid} msg={validationError.password} />
+                    <Validator isValid={passwordValid} msg={validationError.password} />
                     <input
                         type="password"
-                        name="psw"
+                        name="password"
                         id="psw"
                         //value={this.state.password}
                         onChange={this.handleChange}
@@ -123,7 +127,7 @@ class Signup extends Component {
                 
                 <div className="form-group">
                     <label for="psw">Confirm Password</label>
-                    < Validator isValid={passwordValid} msg={validationError.password} />
+                    <Validator isValid={passwordValid} msg={validationError.password} />
                     <input
                         type="password"
                         name="psw"
@@ -142,4 +146,4 @@ class Signup extends Component {
     }
 }
 
-export default withAppContext(Signup);
+

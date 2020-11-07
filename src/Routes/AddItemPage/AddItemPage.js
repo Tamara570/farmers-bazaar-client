@@ -1,40 +1,86 @@
 import React, {} from 'react'
 import './AddItemPage.css'
+import  VendorContext  from '../../context/VendorContext'
 
 
-
-export default function AddItemPage () {
+export default function AddItemPage() {
     return (
-        <div className="product-detail-container">
-            <div ></div>
-            <div className="product-detail-image">
-                <img src="https://picsum.photos/660/442" alt="itemphoto" />
-            </div>
-            <div className="product-detail-item-name-container">
 
-                <div className="product-detail-item-name">
-                    <h5>
-                        Fresh Erbs
-                    </h5>
-                </div>
+        <VendorContext.Consumer>
 
-                <div className="product-detail-item-price-container">
-                    <div className="product-detail-item-price tag">
-                        <p>$5.00</p>
-                    </div>
-                    <div className="product-detail-item-availability tag">
-                        <p>Available</p>
-                    </div>
-                </div>
-            </div>
-            <div className="product-detail-item-description">
-                <p>Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam,
-                </p>
-            </div>
-            <button>Delete</button>
-            <button>Save</button>
-        </div>
+            {value =>
+                <div className="form-container">
+                    
+                    <form className="forms" onSubmit={value.postVendor}>
+                        <div className="form">
+                            <label className="vendorName--label" htmlFor="vendorName">Item img</label>
+                            <div>
+                                <input
+                                    id="img"
+                                    name="img"
+                                    className="Item img--input"
+                                    type="text"
+                                    maxLength="255"
+                                />
+                            </div>
+                        </div>
+                        <div className="form">
+                            <label className="vendorName--label" htmlFor="vendorName">Item Name</label>
+                            <div>
+                                <input
+                                    id="name"
+                                    name="name"
+                                    className="Item Name--input"
+                                    type="text"
+                                    maxLength="255"
+                                />
+                            </div>
+                        </div>
+                        <div className="form">
+                            <label className="vendorDescription--label" htmlFor="vendorPrice">Item price</label>
+                            <div>
+                                <input
+                                    id="itemprice"
+                                    name="itemprice"
+                                    className="vendorDescription--itemprice"
+                                    type="text"
+                                    maxLength="255"
+                                />
+                            </div>
+                        </div>
+                        <div className="form">
+                            <label className="vendorDescription--label" htmlFor="vendorItemCount">Item count</label>
+                            <div>
+                                <input
+                                    id="itemcount"
+                                    name="itemcount"
+                                    className="vendorDescription--itemcount"
+                                    type="text"
+                                    maxLength="255"
+                                />
+                            </div>
+                        </div>
+                        <div className="form">
+                            <label className="vendorDescription--label" htmlFor="vendorName">Item Description</label>
+                            <div>
+                                <input
+                                    id="description"
+                                    name="description"
+                                    className="vendorDescription--input"
+                                    type="text"
+                                    maxLength="255"
+                                />
+                            </div>
+                        </div>
+                       
+                      
+                        <div className="form-button">
+                            <button>Enter new vendor Item</button>
+                        </div>
+
+                    </form>
+                </div>}
+
+        </VendorContext.Consumer>
     )
 }

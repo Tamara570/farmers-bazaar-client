@@ -2,10 +2,10 @@ import React, {Component} from 'react'
 import './LogInForm.css'
 import AuthContext from '../../context/AuthContext'
 import AuthApiService from '../../services/auth-api-service'
-import { withAppContext } from '../../context/AppContext';
 
 
-class Login extends Component {
+
+export default class Login extends React.Component {
     static contextType = AuthContext
 
     state = {
@@ -17,17 +17,17 @@ class Login extends Component {
     handleSubmit = async (e) => {
         e.preventDefault();
         this.setState({error: null})
-        const {setLoading} = this.props.appContext
+        // const {setLoading} = this.props.appContext
         try {
-          setLoading(true)
+        //   setLoading(true)
           const {email, password} = this.state;
           const response = await AuthApiService.login(email, password)
-          setLoading(false)
+        //   setLoading(false)
     
           this.context.login(response.authToken)
           this.context.setCurrentUser(response.user)
         } catch(err) {
-          this.setState({error: err.message}, setLoading(false))
+        //   this.setState({error: err.message}, setLoading(false))
         }
     }
     
@@ -64,8 +64,8 @@ class Login extends Component {
                     <input
                         type="password"
                         //value={this.state.password}
-                        name="psw"
-                        id="psw"
+                        name="password"
+                        id="password"
                         onChange={this.handleChange}
                         required
                     />
@@ -80,4 +80,4 @@ class Login extends Component {
     }   
 }
 
-export default withAppContext(Login);
+// export default withAppContext(Login);
