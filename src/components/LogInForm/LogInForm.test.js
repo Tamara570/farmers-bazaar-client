@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import NavBar from './NavBar';
+import LogInForm from './LogInForm';
 import { MemoryRouter } from 'react-router';
 
 it('renders without crashing', () => {
@@ -10,7 +10,7 @@ it('renders without crashing', () => {
   // render the component, this is the actual test, if something is wrong it will fail here
   ReactDOM.render(
     <MemoryRouter>
-      <NavBar />
+      <LogInForm />
     </MemoryRouter>,
     div
   );
