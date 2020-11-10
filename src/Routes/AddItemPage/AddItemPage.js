@@ -37,11 +37,23 @@ export default function AddItemPage() {
                             </div>
                         </div>
                         <div className="form">
+                            <label className="description" htmlFor="description">Item Description</label>
+                            <div>
+                                <input
+                                    id="description"
+                                    name="description"
+                                    className="description"
+                                    type="text"
+                                    maxLength="255"
+                                />
+                            </div>
+                        </div>
+                        <div className="form">
                             <label className="vendorDescription--label" htmlFor="vendorPrice">Item price</label>
                             <div>
                                 <input
-                                    id="itemprice"
-                                    name="itemprice"
+                                    id="itemPrice"
+                                    name="itemPrice"
                                     className="vendorDescription--itemprice"
                                     type="text"
                                     maxLength="255"
@@ -52,8 +64,8 @@ export default function AddItemPage() {
                             <label className="vendorDescription--label" htmlFor="vendorItemCount">Item count</label>
                             <div>
                                 <input
-                                    id="itemcount"
-                                    name="itemcount"
+                                    id="itemCount"
+                                    name="itemCount"
                                     className="vendorDescription--itemcount"
                                     type="text"
                                     maxLength="255"

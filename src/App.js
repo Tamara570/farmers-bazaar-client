@@ -23,7 +23,7 @@ export default class App extends React.Component {
     vendors: []
   }
   getVendors = e => {
-    fetch(`${API_ENDPOINT}/vendors`)
+    fetch(`${API_ENDPOINT}/vendorinventoryitems`)
       .then(res => res.json())
       .then(vendors => this.setState({ vendors }))
   }
@@ -31,16 +31,23 @@ export default class App extends React.Component {
   componentDidMount = e => {
     this.getVendors()
   }
- 
+//  for a farmer to post a new item
   postVendor = e => {
     e.preventDefault()
-    const img = e.target.img.value
-    const name = e.target.name.value
-    const itemcount = e.target.description.value
-    const itemprice = e.target.description.value
-    const description = e.target.description.value
-    const vendor = {img, name, itemcount, itemprice, description }
-    fetch(`${API_ENDPOINT}/vendors`, {
+    const { name, img, description, itemCount, itemPrice } = e.target;
+    
+  
+    const vendor = {
+      img: img.value,
+      name: name.value,
+      itemCount: itemCount.value,
+      itemPrice: itemPrice.value,
+      description: description.value
+    }
+    
+    console.log({ vendor })
+    
+    fetch(`${API_ENDPOINT}/vendorinventoryitems`, {
       method: 'post',
       headers: {
         'Authorization': `Bearer ${TokenService.getAuthToken()}`,
@@ -61,8 +68,6 @@ export default class App extends React.Component {
       getVendors: this.getVendors
     }
 
-  
-
     return (
       <AuthProvider>
       <VendorContext.Provider value={value}>
@@ -71,11 +76,11 @@ export default class App extends React.Component {
           <Switch>
             <Route exact path='/' component={LandingPage} />
             <Route path='/home' component={HomePage} />
-            <Route path='/inventory' component={Inventory} />
+            <Route exact path='/inventory' component={Inventory} />
             <Route path='/add' component={AddItemPage} />
             <Route path='/signup' component={SignUpPage} />
             <Route path='/login' component={LogInPage} />
-            <Route path='/details' component={ProductDetail} />
+            <Route path='/inventory/details/:id' component={ProductDetail} />
           </Switch>
         </div>
         </VendorContext.Provider>

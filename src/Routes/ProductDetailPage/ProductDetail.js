@@ -1,9 +1,30 @@
-import React, { } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import './ProductDetail.css'
+import { API_ENDPOINT } from '../../config'
 
-
+const defaultState = {
+    vendor: {}
+}
 
 export default function ProductDetail() {
+    const [state, setState] = useState(defaultState);
+    let { id } = useParams();
+
+    const getVendorProduct = () => {
+        fetch(`${API_ENDPOINT}/vendorinventoryitems/${id}`)
+            .then(res => res.json())
+            .then(vendor => {
+                console.log({ vendor })
+                setState({ vendor })
+            })
+    }
+
+    useEffect(() => {
+        getVendorProduct()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [id]);
+
     return (
         <div className="product-detail-container">
             <div className="product-detail-image">
@@ -13,13 +34,13 @@ export default function ProductDetail() {
 
                 <div className="product-detail-item-name">
                     <h5>
-                        Fresh Erbs
+                        {state.vendor.item_name}
                     </h5>
                 </div>
 
                 <div className="product-detail-item-price-container">
                     <div className="product-detail-item-price tag">
-                        <p>$5.00</p>
+                        <p>${state.vendor.item_price}</p>
                     </div>
                     <div className="product-detail-item-availability tag">
                         <p>Available</p>
@@ -27,10 +48,7 @@ export default function ProductDetail() {
                 </div>
             </div>
             <div className="product-detail-item-description">
-                <p>Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam,
-                </p>
+                <p>{state.vendor.item_description}</p>
             </div>
         </div>
     )

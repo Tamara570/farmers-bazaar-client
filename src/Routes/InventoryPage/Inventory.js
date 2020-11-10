@@ -1,6 +1,7 @@
 import React, { } from 'react'
 import ProductItem from '../../components/ProductItem/ProductItem'
 import './inventory.css'
+import VendorContext from '../../context/VendorContext'
 import Search from '../../components/SearchBar/Search'
 
 
@@ -10,10 +11,11 @@ export default function Inventory() {
         <>
             <Search/>
             <div className="inventory-page-container">
-                <ProductItem />
-                <ProductItem />
-                <ProductItem />
-                <ProductItem />
+                <VendorContext.Consumer>
+                    {value => 
+                        value.vendors.map(vendor => <ProductItem key={vendor.id} vendor={vendor} />)
+                    }
+                </VendorContext.Consumer>
             </div>
         </>
     )
