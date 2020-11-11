@@ -2,7 +2,7 @@ import React, { } from 'react'
 import ProductItem from '../../components/ProductItem/ProductItem'
 import './inventory.css'
 import VendorContext from '../../context/VendorContext'
-import Search from '../../components/SearchBar/Search'
+import Search from '../../components/SearchBar/search'
 
 
 

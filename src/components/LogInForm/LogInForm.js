@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import './LogInForm.css'
 import AuthContext from '../../context/AuthContext'
 import AuthApiService from '../../services/auth-api-service'
