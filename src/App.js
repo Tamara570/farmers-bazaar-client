@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import './global/normalize.css'
 import { Route, Switch } from 'react-router-dom'
+//import PublicRoute from '../src/Utils/PublicRoute'
+//import PrivateRoute from '../src/Utils/PrivateRoute'
 import Header from '../src/components/Header/Header'
 import Inventory from './Routes/InventoryPage/Inventory'
 import LandingPage from './Routes/LandingPage/LandingPage'

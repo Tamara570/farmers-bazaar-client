@@ -1,22 +1,26 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom';
 import './LogInForm.css'
 import AuthContext from '../../context/AuthContext'
 import AuthApiService from '../../services/auth-api-service'
 
 
 
-export default class Login extends React.Component {
+class Login extends React.Component {
     static contextType = AuthContext
 
     state = {
         error: null,
         email: '',
         password: '',
+        loggedin: false,
       }
 
     handleSubmit = async (e) => {
         e.preventDefault();
-        this.setState({error: null})
+        this.setState({
+            error: null,
+        })
         // const {setLoading} = this.props.appContext
         try {
         //   setLoading(true)
@@ -26,9 +30,15 @@ export default class Login extends React.Component {
     
           this.context.login(response.authToken)
           this.context.setCurrentUser(response.user)
+          this.state.loggedin = true;
         } catch(err) {
-        //   this.setState({error: err.message}, setLoading(false))
+           this.setState({error: err.message})
         }
+
+        if (this.state.loggedin) {
+            this.props.history.push('/add')
+        }
+        
     }
     
     componentWillUnmount() {
@@ -42,9 +52,12 @@ export default class Login extends React.Component {
     }
 
     render() {
+       
+
         return (
             <form className='js-login-form' action='#' onSubmit={(e) => this.handleSubmit(e)}>
                 <div className='error-msg'>{this.state.error}</div>
+            
 
                 <div className='form-group'>
                     <label for="email">Enter email</label>
@@ -80,4 +93,4 @@ export default class Login extends React.Component {
     }   
 }
 
-// export default withAppContext(Login);
+export default withRouter(Login);

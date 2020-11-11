@@ -33,7 +33,7 @@ export default function LandingPage() {
               Im a Farmer who wants to sell to local shoppers. Sign up below to
               get started.
             </p>
-                      <Link className="landing-page-button" to="/signup">
+                      <Link className="landing-page-button" to="/login">
                           <h4>Sell local now</h4>
                       </Link>
           </div>

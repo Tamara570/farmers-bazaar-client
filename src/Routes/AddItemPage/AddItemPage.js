@@ -3,7 +3,25 @@ import './AddItemPage.css'
 import  VendorContext  from '../../context/VendorContext'
 
 
-export default function AddItemPage() {
+class AddItemPage extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            formComplete: false,
+            error: null,
+        }
+    }
+   
+    handleClick = async (e) => {
+        this.setState = {
+            formComplete: true,
+        }
+        this.props.history.push('/inventory')
+    }
+
+    render() {
+
+    
     return (
 
         <VendorContext.Consumer>
@@ -12,6 +30,7 @@ export default function AddItemPage() {
                 <div className="form-container">
                     
                     <form className="forms" onSubmit={value.postVendor}>
+                    
                         <div className="form">
                             <label className="vendorName--label" htmlFor="vendorName">Item img</label>
                             <div>
@@ -21,6 +40,7 @@ export default function AddItemPage() {
                                     className="Item img--input"
                                     type="text"
                                     maxLength="255"
+                                    required
                                 />
                             </div>
                         </div>
@@ -33,6 +53,7 @@ export default function AddItemPage() {
                                     className="Item Name--input"
                                     type="text"
                                     maxLength="255"
+                                    required
                                 />
                             </div>
                         </div>
@@ -45,6 +66,7 @@ export default function AddItemPage() {
                                     className="description"
                                     type="text"
                                     maxLength="255"
+                                    required
                                 />
                             </div>
                         </div>
@@ -57,6 +79,7 @@ export default function AddItemPage() {
                                     className="vendorDescription--itemprice"
                                     type="text"
                                     maxLength="255"
+                                    required
                                 />
                             </div>
                         </div>
@@ -69,30 +92,23 @@ export default function AddItemPage() {
                                     className="vendorDescription--itemcount"
                                     type="text"
                                     maxLength="255"
+                                    required
                                 />
                             </div>
+                        </div>  
+                        <div className="form-button" >
+                            <button onClick={this.handleClick}>Enter new vendor Item</button>
                         </div>
-                        <div className="form">
-                            <label className="vendorDescription--label" htmlFor="vendorName">Item Description</label>
-                            <div>
-                                <input
-                                    id="description"
-                                    name="description"
-                                    className="vendorDescription--input"
-                                    type="text"
-                                    maxLength="255"
-                                />
-                            </div>
-                        </div>
-                       
-                      
-                        <div className="form-button">
-                            <button>Enter new vendor Item</button>
+
+                        <div>
+                            <p>Check out your inventory <a href="/inventory" alt="">here</a></p>
                         </div>
 
                     </form>
                 </div>}
 
         </VendorContext.Consumer>
-    )
+    )}
 }
+
+export default AddItemPage

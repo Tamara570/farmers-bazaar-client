@@ -1,11 +1,12 @@
 import React from 'react';
 import './SignUp.css'
+import { withRouter } from 'react-router-dom';
 import Validator from '../Validator/Validator'
 import AuthContext from '../../context/AuthContext'
 import AuthApiService from '../../services/auth-api-service'
 //import { VendorContext } from '../../context/VendorContext';
 
- export default class Signup extends React.Component {
+ class Signup extends React.Component {
     static contextType = AuthContext
 
     state = {
@@ -17,6 +18,7 @@ import AuthApiService from '../../services/auth-api-service'
             password: null,
             email: null,
         },
+        loggedin: false,
     }
 
     handleSubmit = async (e) => {
@@ -31,9 +33,14 @@ import AuthApiService from '../../services/auth-api-service'
             this.context.login(savedUser.authToken)
             delete savedUser.authToken
             this.context.setCurrentUser(savedUser)
+            this.state.loggedin = true;
             // setLoading(true)
         } catch(err) {
             // this.setState({error: err.message}, setLoading(false))
+        }
+        //redirect to the add items page
+        if (this.state.loggedin) {
+            this.props.history.push('/add')
         }
     }
 
@@ -147,3 +154,4 @@ import AuthApiService from '../../services/auth-api-service'
 }
 
 
+export default withRouter(Signup)
