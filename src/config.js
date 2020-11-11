@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === 'production') {
 let API_ENDPOINT = apiPath;
 let TOKEN_KEY = tokenKey;
 
-export default {
+export  {
   API_ENDPOINT,
   TOKEN_KEY
 }

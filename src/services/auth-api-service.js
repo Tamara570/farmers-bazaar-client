@@ -1,10 +1,10 @@
-import config from '../config';
+import { API_ENDPOINT } from '../config'
 import TokenService from '../services/TokenService';
 
 const AuthApiService = {
-  async login(email, password){
-    const loginData = {email, password};
-    const res = await fetch(`${config.API_ENDPOINT}/auth/login`, {
+  async login(user_name, password){
+    const loginData = {user_name, password};
+    const res = await fetch(`${API_ENDPOINT}/auth/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -19,7 +19,7 @@ const AuthApiService = {
   },
 
   async createUser(userData){
-    const res = await fetch(`${config.API_ENDPOINT}/users`, {
+    const res = await fetch(`${API_ENDPOINT}/users`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -35,7 +35,7 @@ const AuthApiService = {
   },
 
   async getCurrentUser() {
-    const res = await fetch(`${config.API_ENDPOINT}/auth/current-user`, {
+    const res = await fetch(`${API_ENDPOINT}/auth/current-user`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
