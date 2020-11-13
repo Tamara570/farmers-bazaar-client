@@ -43,7 +43,7 @@ export default function ProductDetail() {
                         <p>${state.vendor.item_price}</p>
                     </div>
                     <div className="product-detail-item-availability tag">
-                        <p>Available</p>
+                        <p>Available: {state.vendor.item_count}</p>
                     </div>
                 </div>
             </div>
