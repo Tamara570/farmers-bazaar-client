@@ -1,6 +1,7 @@
-import React from 'react';
-import './search.css';
-import search from '../../icons/search.svg';
+import React from 'react'
+import './search.css'
+import search from "../../icons/search.svg";
+
 
 export default function Search() {
   return (

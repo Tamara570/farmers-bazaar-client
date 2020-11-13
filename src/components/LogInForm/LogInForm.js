@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import './LogInForm.css';
-import AuthContext from '../../context/AuthContext';
-import AuthApiService from '../../services/auth-api-service';
+import React from 'react'
+import './LogInForm.css'
+import AuthContext from '../../context/AuthContext'
+import AuthApiService from '../../services/auth-api-service'
 
 export default class Login extends React.Component {
   static contextType = AuthContext;

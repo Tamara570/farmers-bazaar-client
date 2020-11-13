@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './SignUp.css'
 import Validator from '../Validator/Validator'
 import AuthContext from '../../context/AuthContext'
 import AuthApiService from '../../services/auth-api-service'
-import { VendorContext } from '../../context/VendorContext';
+//import { VendorContext } from '../../context/VendorContext';
 
  export default class Signup extends React.Component {
     static contextType = AuthContext

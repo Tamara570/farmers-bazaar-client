@@ -1,6 +1,7 @@
 import React from 'react';
-import Search from '../../components/SearchBar/search';
-import ProductItem from '../../components/ProductItem/ProductItem';
+import Search from '../../components/SearchBar/search'
+import ProductItem from '../../components/ProductItem/ProductItem'
+
 
 export default function HomePage() {
   return (

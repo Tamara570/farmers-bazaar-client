@@ -1,8 +1,8 @@
-import React from 'react';
-import ProductItem from '../../components/ProductItem/ProductItem';
-import './inventory.css';
-import VendorContext from '../../context/VendorContext';
-import Search from '../../components/SearchBar/search';
+import React, { } from 'react'
+import ProductItem from '../../components/ProductItem/ProductItem'
+import './inventory.css'
+import VendorContext from '../../context/VendorContext'
+import Search from '../../components/SearchBar/search'
 
 export default function Inventory() {
   return (
