@@ -4,21 +4,21 @@ import './inventory.css'
 import VendorContext from '../../context/VendorContext'
 import Search from '../../components/SearchBar/search'
 
-
-
 export default function Inventory() {
-    return (
-        <>
-            <Search/>
-            <div className="inventory-page-container">
-                <VendorContext.Consumer>
-                    {value => 
-                        value.vendors.map(vendor => <ProductItem key={vendor.id} vendor={vendor} />)
-                    }
-                </VendorContext.Consumer>
-            </div>
-        </>
-    )
+  return (
+    <>
+      <Search />
+      <div className='inventory-page-container'>
+        <VendorContext.Consumer>
+          {value =>
+            value.vendors.map(vendor => (
+              <ProductItem key={vendor.id} vendor={vendor} />
+            ))
+          }
+        </VendorContext.Consumer>
+      </div>
+    </>
+  );
 }
 
 // export default function Dealerlist() {

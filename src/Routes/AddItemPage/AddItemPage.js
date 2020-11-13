@@ -1,6 +1,6 @@
-import React, {} from 'react'
-import './AddItemPage.css'
-import  VendorContext  from '../../context/VendorContext'
+import React from 'react';
+import './AddItemPage.css';
+import VendorContext from '../../context/VendorContext';
 
 
 class AddItemPage extends React.Component {
