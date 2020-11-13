@@ -1,19 +1,20 @@
 import React from 'react';
 import './App.css';
-import './global/normalize.css';
-import { Route, Switch } from 'react-router-dom';
-import Header from '../src/components/Header/Header';
-import Inventory from './Routes/InventoryPage/Inventory';
-import LandingPage from './Routes/LandingPage/LandingPage';
-import AddItemPage from './Routes/AddItemPage/AddItemPage';
-import SignUpPage from './Routes/SignupPage/SignUpPage';
-import LogInPage from './Routes/LoginPage/LoginPage';
-import ProductDetail from './Routes/ProductDetailPage/ProductDetail';
+import './global/normalize.css'
+import { Route, Switch } from 'react-router-dom'
+//import PublicRoute from '../src/Utils/PublicRoute'
+//import PrivateRoute from '../src/Utils/PrivateRoute'
+import Header from '../src/components/Header/Header'
+import Inventory from './Routes/InventoryPage/Inventory'
+import LandingPage from './Routes/LandingPage/LandingPage'
+import AddItemPage from './Routes/AddItemPage/AddItemPage'
+import SignUpPage from './Routes/SignupPage/SignUpPage'
+import LogInPage from './Routes/LoginPage/LoginPage'
+import ProductDetail from './Routes/ProductDetailPage/ProductDetail'
 import HomePage from './Routes/UserHomePage/HomePage';
 import { API_ENDPOINT } from './config';
 import TokenService from './services/TokenService';
 import BackButton from '../src/components/BackButton/BackButton';
-
 import VendorContext from './context/VendorContext';
 import { AuthProvider } from './context/AuthContext';
 
