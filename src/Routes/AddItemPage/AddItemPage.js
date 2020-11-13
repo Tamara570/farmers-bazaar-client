@@ -1,6 +1,6 @@
-import React from 'react';
-import './AddItemPage.css';
-import VendorContext from '../../context/VendorContext';
+import React, {} from 'react'
+import './AddItemPage.css'
+import  VendorContext  from '../../context/VendorContext'
 
 
 class AddItemPage extends React.Component {
@@ -12,7 +12,8 @@ class AddItemPage extends React.Component {
         }
     }
    
-    handleClick = async (e) => {
+    onSubmit = postVendor => async (e) => {
+        await postVendor(e);
         this.setState = {
             formComplete: true,
         }
@@ -29,7 +30,7 @@ class AddItemPage extends React.Component {
             {value =>
                 <div className="form-container">
                     
-                    <form className="forms" onSubmit={value.postVendor}>
+                    <form className="forms" onSubmit={this.onSubmit(value.postVendor)}>
                     
                         <div className="form">
                             <label className="vendorName--label" htmlFor="vendorName">Item img</label>
@@ -97,7 +98,7 @@ class AddItemPage extends React.Component {
                             </div>
                         </div>  
                         <div className="form-button" >
-                            <button onClick={this.handleClick}>Enter new vendor Item</button>
+                            <button type="submit">Enter new vendor Item</button>
                         </div>
 
                         <div>

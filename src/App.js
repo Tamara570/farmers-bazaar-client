@@ -46,7 +46,7 @@ export default class App extends React.Component {
 
     console.log({ vendor });
 
-    fetch(`${API_ENDPOINT}/vendorinventoryitems`, {
+    return fetch(`${API_ENDPOINT}/vendorinventoryitems`, {
       method: 'post',
       headers: {
         Authorization: `Bearer ${TokenService.getAuthToken()}`,
