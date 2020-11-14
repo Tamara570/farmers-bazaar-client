@@ -4,7 +4,7 @@ import TokenService from '../services/TokenService';
 const AuthApiService = {
   async login(user_name, password){
     const loginData = {user_name, password};
-    const res = await fetch(`${API_ENDPOINT}auth/login`, {
+    const res = await fetch(`${API_ENDPOINT}/auth/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -35,7 +35,7 @@ const AuthApiService = {
   },
 
   async getCurrentUser() {
-    const res = await fetch(`${API_ENDPOINT}auth/current-user`, {
+    const res = await fetch(`${API_ENDPOINT}/auth/current-user`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

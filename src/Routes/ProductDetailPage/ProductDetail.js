@@ -12,7 +12,7 @@ export default function ProductDetail() {
     let { id } = useParams();
 
     const getVendorProduct = () => {
-        fetch(`${API_ENDPOINT}vendorinventoryitems/${id}`)
+        fetch(`${API_ENDPOINT}/vendorinventoryitems/${id}`)
             .then(res => res.json())
             .then(vendor => {
                 console.log({ vendor })
