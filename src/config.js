@@ -3,7 +3,7 @@ let tokenKey;
 
 if (process.env.NODE_ENV === 'production') {
 
-  apiPath = 'https://farmers-bazaar-server.herokuapp.com/'
+  apiPath = 'https://farmers-bazaar-server.herokuapp.com'
   tokenKey = ''
   
 } else {
