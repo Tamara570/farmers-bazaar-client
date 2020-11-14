@@ -3,7 +3,7 @@ let tokenKey;
 
 if (process.env.NODE_ENV === 'production') {
   apiPath = 'https://farmers-bazaar-app.herokuapp.com'
-  tokenKey = ''
+  tokenKey = 'bazaar-dev-auth-token'
 } else {
   apiPath = 'http://localhost:8000/api'
   tokenKey = 'bazaar-dev-auth-token'
