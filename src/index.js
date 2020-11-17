@@ -5,6 +5,8 @@ import './index.css';
 import App from './App';
 //import { AuthProvider } from './context/AuthContext';
 
+console.log(process.env)
+
 ReactDOM.render(
   
   <BrowserRouter>

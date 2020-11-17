@@ -7,7 +7,7 @@ export default function Header() {
     return (
         <header className="app-header-a">
             <div className="app-header-logo">
-                <img src={logo} alt="logo" />
+                <a href="/" alt=""><img src={logo} alt="logo" /></a>
             </div>
             <div className="app-nav-system">
                 <Navbar />

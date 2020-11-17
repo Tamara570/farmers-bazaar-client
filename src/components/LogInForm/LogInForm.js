@@ -88,6 +88,9 @@ class Login extends React.Component {
                     <button type="submit">Submit</button>
                 </div>
                 
+                <div>
+                    <p>Don't have an account? Sign Up <a href="/signup" alt="">Here</a></p>
+                </div>
             </form>
         )
     }   

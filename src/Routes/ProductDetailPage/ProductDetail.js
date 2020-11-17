@@ -6,7 +6,7 @@ import { API_ENDPOINT } from '../../config'
 const defaultState = {
     vendor: {}
 }
-
+ 
 export default function ProductDetail() {
     const [state, setState] = useState(defaultState);
     let { id } = useParams();
