@@ -23,7 +23,7 @@ export default class App extends React.Component {
     vendors: [],
   };
   getVendors = e => {
-    fetch(`${API_ENDPOINT}/vendorinventoryitems`)
+    fetch(`${API_ENDPOINT}/items`)
       .then(res => res.json())
       .then(vendors => this.setState({ vendors }));
   };
@@ -46,7 +46,7 @@ export default class App extends React.Component {
 
     console.log({ vendor });
 
-    return fetch(`${API_ENDPOINT}/vendorinventoryitems`, {
+    return fetch(`${API_ENDPOINT}/items`, {
       method: 'post',
       headers: {
         Authorization: `Bearer ${TokenService.getAuthToken()}`,
