@@ -11,8 +11,8 @@ export default function Inventory() {
       <div className='inventory-page-container'>
         <VendorContext.Consumer>
           {value =>
-            value.vendors.map(vendor => (
-              <ProductItem key={vendor.id} vendor={vendor} />
+            value.items.map(items => (
+              <ProductItem key={items.id} items={items} />
             ))
           }
         </VendorContext.Consumer>
