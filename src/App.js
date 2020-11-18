@@ -25,7 +25,7 @@ export default class App extends React.Component {
   getItems = e => {
     fetch(`${API_ENDPOINT}/items`)
       .then(res => res.json())
-      .then(vendors => this.setState({ vendors }));
+      .then(items => this.setState({ items }));
   };
 
   componentDidMount = e => {
