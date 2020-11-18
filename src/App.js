@@ -34,10 +34,9 @@ export default class App extends React.Component {
   //  for a farmer to post a new item
   postItems = e => {
     e.preventDefault();
-    const { vendor_id, name, img, description, itemCount, itemPrice } = e.target;
+    const { name, img, description, itemCount, itemPrice } = e.target;
 
     const item = {
-      vendor_id: vendor_id.value,
       img: img.value,
       name: name.value,
       itemCount: itemCount.value,
