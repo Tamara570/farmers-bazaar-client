@@ -29,7 +29,7 @@ export default class App extends React.Component {
   };
 
   componentDidMount = e => {
-    this.postItems();
+    this.getItems();
   };
   //  for a farmer to post a new item
   postItems = e => {
