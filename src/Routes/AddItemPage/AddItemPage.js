@@ -111,5 +111,6 @@ class AddItemPage extends React.Component {
         </VendorContext.Consumer>
     )}
 }
+console.log({current-user});
 
 export default AddItemPage

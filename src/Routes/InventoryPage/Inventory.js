@@ -21,6 +21,7 @@ export default function Inventory() {
   );
 }
 
+
 // export default function Dealerlist() {
 //     return (
 //         <DealerContext.Consumer>
