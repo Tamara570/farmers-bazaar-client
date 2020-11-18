@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const VendorContext = React.createContext({
-  vendors: []
+  items: []
 })
 
 export default VendorContext
