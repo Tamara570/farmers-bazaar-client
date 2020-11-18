@@ -12,8 +12,8 @@ class AddItemPage extends React.Component {
         }
     }
    
-    onSubmit = postVendor => async (e) => {
-        await postVendor(e);
+    onSubmit = postItem => async (e) => {
+        await postItem(e);
         this.setState = {
             formComplete: true,
         }
@@ -30,7 +30,7 @@ class AddItemPage extends React.Component {
             {value =>
                 <div className="form-container">
                     
-                    <form className="forms" onSubmit={this.onSubmit(value.postVendor)}>
+                    <form className="forms" onSubmit={this.onSubmit(value.postItem)}>
                     
                         <div className="form">
                             <label className="vendorName--label" htmlFor="vendorName">Item img</label>

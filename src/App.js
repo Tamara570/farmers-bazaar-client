@@ -22,21 +22,22 @@ export default class App extends React.Component {
   state = {
     vendors: [],
   };
-  getVendors = e => {
+  getItems = e => {
     fetch(`${API_ENDPOINT}/items`)
       .then(res => res.json())
       .then(vendors => this.setState({ vendors }));
   };
 
   componentDidMount = e => {
-    this.getVendors();
+    this.getItems();
   };
   //  for a farmer to post a new item
-  postVendor = e => {
+  postItems = e => {
     e.preventDefault();
-    const { name, img, description, itemCount, itemPrice } = e.target;
+    const { vendor_id, name, img, description, itemCount, itemPrice } = e.target;
 
-    const vendor = {
+    const item = {
+      vendor_id: vendor_id.value,
       img: img.value,
       name: name.value,
       itemCount: itemCount.value,
@@ -44,7 +45,7 @@ export default class App extends React.Component {
       description: description.value,
     };
 
-    console.log({ vendor });
+    console.log({ item });
 
     return fetch(`${API_ENDPOINT}/items`, {
       method: 'post',
@@ -53,7 +54,7 @@ export default class App extends React.Component {
         'content-type': 'application/json',
       },
 
-      body: JSON.stringify(vendor),
+      body: JSON.stringify(item),
     }).then(res => {
       this.componentDidMount();
     });
