@@ -19,7 +19,7 @@ const AuthApiService = {
   },
 
   async createUser(userData){
-    const res = await fetch(`${API_ENDPOINT}/vendors`, {
+    const res = await fetch(`${API_ENDPOINT}/users`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
