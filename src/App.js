@@ -61,9 +61,9 @@ export default class App extends React.Component {
   };
   render() {
     const value = {
-      vendors: this.state.vendors,
-      postVendor: this.postVendor,
-      getVendors: this.getVendors,
+      items: this.state.items,
+      postItems: this.postItems,
+      getItems: this.getItems,
     };
 
     return (
