@@ -35,11 +35,13 @@ const AuthApiService = {
   },
 
   async getCurrentUser() {
-    const res = await fetch(`${API_ENDPOINT}/auth/current-user`, {
+    let currentuser = TokenService.getUserId()
+    const res = await fetch(`${API_ENDPOINT}/auth/${currentuser}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${TokenService.getAuthToken()}`
+        //console.log(current-user)
       }
     })
 

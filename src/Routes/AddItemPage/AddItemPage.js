@@ -17,6 +17,7 @@ class AddItemPage extends React.Component {
         this.setState = {
             formComplete: true,
         }
+        
         this.props.history.push('/inventory')
     }
 
@@ -110,7 +111,8 @@ class AddItemPage extends React.Component {
 
         </VendorContext.Consumer>
     )}
+
 }
-console.log({current-user});
+
 
 export default AddItemPage
