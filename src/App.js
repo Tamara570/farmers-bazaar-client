@@ -20,7 +20,7 @@ import { AuthProvider } from './context/AuthContext';
 
 export default class App extends React.Component {
   state = {
-    vendors: [],
+    items: [],
   };
   getItems = e => {
     fetch(`${API_ENDPOINT}/items`)
