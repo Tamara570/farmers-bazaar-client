@@ -32,7 +32,7 @@ class AddItemPage extends React.Component {
                 <div className="form-container">
                     
                     <form className="forms" onSubmit={this.onSubmit(value.postItem)}>
-                    
+                        <h1>Add to your Inventory!</h1>
                         <div className="form">
                             <label className="vendorName--label" htmlFor="vendorName">Item img</label>
                             <div>
@@ -99,7 +99,7 @@ class AddItemPage extends React.Component {
                             </div>
                         </div>  
                         <div className="form-button" >
-                            <button type="submit">Enter new vendor Item</button>
+                            <button type="submit">Add Item</button>
                         </div>
 
                         <div>

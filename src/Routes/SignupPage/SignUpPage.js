@@ -1,5 +1,6 @@
 import React from 'react'
 import Signup from '../../components/SignUpForm/SignUp'
+import './SignUpPage.css'
 
 export default function SignUpPage () {
     return (
