@@ -9,65 +9,19 @@ import Inventory from './Routes/InventoryPage/Inventory'
 import LandingPage from './Routes/LandingPage/LandingPage'
 import AddItemPage from './Routes/AddItemPage/AddItemPage'
 import SignUpPage from './Routes/SignupPage/SignUpPage'
+import VendorForm from './components/VendorForm/VendorForm'
 import LogInPage from './Routes/LoginPage/LoginPage'
 import ProductDetail from './Routes/ProductDetailPage/ProductDetail'
 import HomePage from './Routes/UserHomePage/HomePage';
-import { API_ENDPOINT } from './config';
-import TokenService from './services/TokenService';
 import BackButton from '../src/components/BackButton/BackButton';
-import VendorContext from './context/VendorContext';
 import { AuthProvider } from './context/AuthContext';
 
+
 export default class App extends React.Component {
-  state = {
-    items: [],
-  };
-  getItems = e => {
-    fetch(`${API_ENDPOINT}/items`)
-      .then(res => res.json())
-      .then(items => this.setState({ items }));
-  };
 
-  componentDidMount = e => {
-    this.getItems();
-  };
-  //  for a farmer to post a new item
-  postItems = e => {
-    e.preventDefault();
-    const { name, img, description, itemCount, itemPrice } = e.target;
-
-    const item = {
-      img: img.value,
-      name: name.value,
-      itemCount: itemCount.value,
-      itemPrice: itemPrice.value,
-      description: description.value,
-    };
-
-    console.log({ item });
-
-    return fetch(`${API_ENDPOINT}/items`, {
-      method: 'post',
-      headers: {
-        Authorization: `Bearer ${TokenService.getAuthToken()}`,
-        'content-type': 'application/json',
-      },
-
-      body: JSON.stringify(item),
-    }).then(res => {
-      this.componentDidMount();
-    });
-  };
   render() {
-    const value = {
-      items: this.state.items,
-      postItems: this.postItems,
-      getItems: this.getItems,
-    };
-
     return (
       <AuthProvider>
-        <VendorContext.Provider value={value}>
           <div className='App'>
             <Header />
             <BackButton />
@@ -77,11 +31,11 @@ export default class App extends React.Component {
               <Route exact path='/inventory' component={Inventory} />
               <Route path='/add' component={AddItemPage} />
               <Route path='/signup' component={SignUpPage} />
+              <Route path='/vendorinfo' component={VendorForm} />
               <Route path='/login' component={LogInPage} />
               <Route path='/inventory/details/:id' component={ProductDetail} />
             </Switch>
           </div>
-        </VendorContext.Provider>
       </AuthProvider>
     );
   }
