@@ -9,7 +9,6 @@ import Inventory from './Routes/InventoryPage/Inventory'
 import LandingPage from './Routes/LandingPage/LandingPage'
 import AddItemPage from './Routes/AddItemPage/AddItemPage'
 import SignUpPage from './Routes/SignupPage/SignUpPage'
-import VendorForm from './components/VendorForm/VendorForm'
 import LogInPage from './Routes/LoginPage/LoginPage'
 import ProductDetail from './Routes/ProductDetailPage/ProductDetail'
 import HomePage from './Routes/UserHomePage/HomePage';
@@ -31,7 +30,6 @@ export default class App extends React.Component {
               <PrivateRoute exact path='/inventory' component={Inventory} />
               <PrivateRoute path='/add' component={AddItemPage} />
               <PublicRoute path='/signup' component={SignUpPage} />
-              <PrivateRoute path='/vendorinfo' component={VendorForm} />
               <PublicRoute path='/login' component={LogInPage} />
               <PrivateRoute path='/inventory/details/:id' component={ProductDetail} />
             </Switch>

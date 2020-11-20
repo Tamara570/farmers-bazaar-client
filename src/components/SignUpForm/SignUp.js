@@ -40,7 +40,7 @@ import AuthApiService from '../../services/auth-api-service'
         }
         //redirect to the add items page
         if (this.state.loggedin) {
-            this.props.history.push('/vendorinfo')
+            this.props.history.push('/add')
         }
     }
 
