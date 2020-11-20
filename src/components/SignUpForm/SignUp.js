@@ -102,7 +102,7 @@ import AuthApiService from '../../services/auth-api-service'
         console.log(validationError, emailValid,passwordValid,formValid)
         return (
             <form className='js-registration-form' action='#' onSubmit={this.handleSubmit}>
-                <div className='error-msg'>{this.state.error}</div>
+                <div className='error-msg'>{this.state.validationError}</div>
 
                 <div className="form-group">
                     <label for="email">Email</label>
