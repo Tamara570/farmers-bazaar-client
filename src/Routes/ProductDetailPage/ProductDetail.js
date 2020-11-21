@@ -18,7 +18,18 @@ export default function ProductDetail() {
                 console.log({ item })
                 setState({ item })
             })
-    }
+
+    // const [items, setItems] = useState([]);
+    // const getItems = () => {
+    //   fetch(`${API_ENDPOINT}/items`)
+    //     .then(res => res.json())
+    //     console.log(items)
+    //     .then(items => setItems(items));
+    // };
+    // useEffect(() => {
+    //   getItems();
+    // }, []);
+     }
 
     useEffect(() => {
         getItem()
@@ -34,21 +45,21 @@ export default function ProductDetail() {
 
                 <div className="product-detail-item-name">
                     <h5>
-                        {state.items.name}
+                        {state.items.id.name}
                     </h5>
                 </div>
 
                 <div className="product-detail-item-price-container">
                     <div className="product-detail-item-price tag">
-                        <p>${state.items.itemPrice}</p>
+                        <p>${state.items.id.itemprice}</p>
                     </div>
                     <div className="product-detail-item-availability tag">
-                        <p>Available: {state.items.itemCount}</p>
+                        <p>Available: {state.items.id.itemcount}</p>
                     </div>
                 </div>
             </div>
             <div className="product-detail-item-description">
-                <p>{state.items.description}</p>
+                <p>{state.items.id.description}</p>
             </div>
         </div>
     )
