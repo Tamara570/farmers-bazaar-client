@@ -25,7 +25,16 @@ import AuthApiService from '../../services/auth-api-service'
         e.preventDefault();
         this.setState({error: null})
         const { email, password } = this.state
-        const newUser = { user_name:email, password}
+        
+        const newUser = { user_name:email, password, ...this.state}
+        delete newUser.validationError
+        delete newUser.formValid
+        delete newUser.loggedin
+        delete newUser.passwordValid
+        delete newUser.emailValid
+
+
+        console.log('aaaaa', newUser)
         // const {setLoading} = this.props.VendorContext
         try {
             // setLoading(true)
@@ -147,7 +156,7 @@ import AuthApiService from '../../services/auth-api-service'
                     <label for="farm-name">Name of Farm</label>
                     <input
                         type="farm"
-                        name="farm"
+                        name="farm_name"
                         id="farm"
                         onChange={this.handleChange}
                         required
@@ -158,7 +167,7 @@ import AuthApiService from '../../services/auth-api-service'
                     <label for="address">Street Address</label>
                     <input
                         type="address"
-                        name="address"
+                        name="street_address"
                         id="address"
                         onChange={this.handleChange}
                         required

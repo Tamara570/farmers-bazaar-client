@@ -1,6 +1,7 @@
 import React from "react";
 import "./AddItemPage.css";
 import VendorContext from "../../context/VendorContext";
+import AuthContext from '../../context/AuthContext'
 import TokenService from "../../services/TokenService";
 import { API_ENDPOINT } from '../../config';
 
@@ -13,16 +14,15 @@ class AddItemPage extends React.Component {
     };
   }
 
-  postItem = (e) => {
-    e.preventDefault();
+  postItem = (e, id) => {
     const { name, img, description, itemCount, itemPrice } = e.target;
 
     const item = {
-    
+      users_id: id,
       img: img.value,
       name: name.value,
-      itemCount: itemCount.value,
-      itemPrice: itemPrice.value,
+      itemcount: itemCount.value,
+      itemprice: itemPrice.value,
       description: description.value,
     };
 
@@ -39,8 +39,9 @@ class AddItemPage extends React.Component {
     });
   };
 
-  onSubmit = async (e) => {
-    await this.postItem(e);
+  onSubmit = async (e, id) => {
+    e.preventDefault()
+    await this.postItem(e, id);
     this.setState = {
       formComplete: true,
     };
@@ -50,10 +51,13 @@ class AddItemPage extends React.Component {
 
   render() {
     return (
+      <AuthContext.Consumer>
+        { user => (
       <VendorContext.Consumer>
         {(value) => (
           <div className="form-container">
-            <form className="forms" onSubmit={this.onSubmit}>
+            {console.log('hello', user)}
+            <form className="forms" onSubmit={(e) => this.onSubmit(e, user.currentUser.id)}>
               <h1>Add to your Inventory!</h1>
               <div className="form">
                 <label className="vendorName--label" htmlFor="vendorName">
@@ -152,6 +156,8 @@ class AddItemPage extends React.Component {
           </div>
         )}
       </VendorContext.Consumer>
+        )}
+      </AuthContext.Consumer>
     );
   }
 }
