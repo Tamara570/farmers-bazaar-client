@@ -48,9 +48,9 @@ export default function LandingPage() {
               Im a shopper who would like purchase fresh food from local
               farmers. Click below to shop local now.
             </p>
-                      <Link className="landing-page-button" to="/inventory">
+                      <Link className="landing-page-button" to="/home">
                           <h4>Shop local now</h4>
-                        </Link>
+                      </Link>
           </div>
         </div>
       </div>
