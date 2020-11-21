@@ -120,6 +120,7 @@ import AuthApiService from '../../services/auth-api-service'
                         value={this.state.email}
                         name="email"
                         id="email"
+                        placeholder="Email"
                         onChange={this.handleChange}
                         onBlur={this.validateEmail}
                         required
@@ -133,7 +134,7 @@ import AuthApiService from '../../services/auth-api-service'
                         type="password"
                         name="password"
                         id="psw"
-                        //value={this.state.password}
+                        placeholder="Password"
                         onChange={this.handleChange}
                         required
                     />
@@ -146,7 +147,7 @@ import AuthApiService from '../../services/auth-api-service'
                         type="password"
                         name="psw"
                         id="psw"
-                        //value={this.state.password}
+                        placeholder="Confirm Password"
                         onChange={this.handleChange}
                         required
                     />
@@ -158,6 +159,7 @@ import AuthApiService from '../../services/auth-api-service'
                         type="farm"
                         name="farm_name"
                         id="farm"
+                        placeholder="Farm Name"
                         onChange={this.handleChange}
                         required
                     />
@@ -169,6 +171,7 @@ import AuthApiService from '../../services/auth-api-service'
                         type="address"
                         name="street_address"
                         id="address"
+                        placeholder="Street Address"
                         onChange={this.handleChange}
                         required
                     />
@@ -180,6 +183,7 @@ import AuthApiService from '../../services/auth-api-service'
                         type="city"
                         name="city"
                         id="city"
+                        placeholder="City"
                         onChange={this.handleChange}
                         required
                     />
@@ -191,6 +195,7 @@ import AuthApiService from '../../services/auth-api-service'
                         type="state"
                         name="state"
                         id="state"
+                        placeholder="State"
                         onChange={this.handleChange}
                         required
                     />
@@ -202,6 +207,7 @@ import AuthApiService from '../../services/auth-api-service'
                         type="zip"
                         name="zip"
                         id="zip"
+                        placeholder="Zip Code"
                         onChange={this.handleChange}
                         required
                     />
