@@ -31,7 +31,7 @@ export default class App extends React.Component {
               <PrivateRoute path='/add' component={AddItemPage} />
               <PublicRoute path='/signup' component={SignUpPage} />
               <PublicRoute path='/login' component={LogInPage} />
-              <PrivateRoute path='/inventory/details/:id' component={ProductDetail} />
+              <PublicRoute path='/inventory/details/:id' component={ProductDetail} />
             </Switch>
           </div>
       </AuthProvider>
