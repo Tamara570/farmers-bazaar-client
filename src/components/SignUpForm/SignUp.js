@@ -103,7 +103,6 @@ import AuthApiService from '../../services/auth-api-service'
         return (
             <form className='js-registration-form' action='#' onSubmit={this.handleSubmit}>
                 <div className='error-msg'>{this.validationError}</div>
-
                 <div className="form-group">
                     <label for="email">Email</label>
                     <Validator isValid={emailValid} msg={validationError.email} />
@@ -139,6 +138,61 @@ import AuthApiService from '../../services/auth-api-service'
                         name="psw"
                         id="psw"
                         //value={this.state.password}
+                        onChange={this.handleChange}
+                        required
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label for="farm-name">Name of Farm</label>
+                    <input
+                        type="farm"
+                        name="farm"
+                        id="farm"
+                        onChange={this.handleChange}
+                        required
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label for="address">Street Address</label>
+                    <input
+                        type="address"
+                        name="address"
+                        id="address"
+                        onChange={this.handleChange}
+                        required
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label for="city">City</label>
+                    <input
+                        type="city"
+                        name="city"
+                        id="city"
+                        onChange={this.handleChange}
+                        required
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label for="state">State</label>
+                    <input
+                        type="state"
+                        name="state"
+                        id="state"
+                        onChange={this.handleChange}
+                        required
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label for="zip">Zip Code</label>
+                    <input
+                        type="zip"
+                        name="zip"
+                        id="zip"
                         onChange={this.handleChange}
                         required
                     />
