@@ -8,7 +8,7 @@ const defaultState = {
 }
  
 export default function ProductDetail() {
-    const [state, setState] = useState(defaultState);
+    const [items, setItems] = useState(defaultState);
     let { id } = useParams();
 
     const getItem = () => {
@@ -16,7 +16,7 @@ export default function ProductDetail() {
             .then(res => res.json())
             .then(item => {
                 console.log({ item })
-                setState({ item })
+                setItems({ item })
             })
     }
 
@@ -34,21 +34,21 @@ export default function ProductDetail() {
 
                 <div className="product-detail-item-name">
                     <h5>
-                        {state.items.name}
+                        {items.name}
                     </h5>
                 </div>
 
                 <div className="product-detail-item-price-container">
                     <div className="product-detail-item-price tag">
-                        <p>${state.items.itemPrice}</p>
+                        <p>${items.itemprice}</p>
                     </div>
                     <div className="product-detail-item-availability tag">
-                        <p>Available: {state.items.itemCount}</p>
+                        <p>Available: {items.itemcount}</p>
                     </div>
                 </div>
             </div>
             <div className="product-detail-item-description">
-                <p>{state.items.description}</p>
+                <p>{items.description}</p>
             </div>
         </div>
     )

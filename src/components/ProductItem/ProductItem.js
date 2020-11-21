@@ -11,14 +11,14 @@ export default function ProductItem(props) {
                         <img src="https://picsum.photos/120/120" alt="food" />
                     </div>
                     <div className="product-item-name">
-                        <h5>{props.item.item_name}</h5>
+                        <h5>{props.item.name}</h5>
                     </div>
 
                     <div className="product-item-price">
-                        <p>{props.item.item_price}</p>
+                        <p>{props.item.itemprice}</p>
                     </div>
                     <div className="product-item-available">
-                        <p>{props.item.item_count}</p>
+                        <p>{props.item.itemcount}</p>
                     </div>
                 </div>
             </Link>
